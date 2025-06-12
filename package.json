@@ -31,13 +31,13 @@
     "@mikro-orm/knex": "6.4.3",
     "@mikro-orm/migrations": "6.4.3",
     "@mikro-orm/postgresql": "6.4.3",
-    "@rsc-labs/medusa-documents-v2": "0.1.6",
     "awilix": "^8.0.1",
     "dotenv": "^16.5.0",
     "medusav2-file-supabase-storage": "^0.0.5",
     "pg": "^8.13.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10",
     "@medusajs/test-utils": "2.8.4",
     "@mikro-orm/cli": "6.4.3",
     "@swc/core": "1.5.7",
