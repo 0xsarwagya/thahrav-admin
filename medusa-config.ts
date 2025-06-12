@@ -1,5 +1,4 @@
 import { loadEnv, defineConfig } from '@medusajs/framework/utils'
-import type { AuthOptions } from 'medusa-plugin-auth'
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 const BACKEND_URL = process.env.BACKEND_URL || "localhost:9000"
