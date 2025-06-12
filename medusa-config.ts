@@ -1,5 +1,4 @@
 import { loadEnv, defineConfig } from '@medusajs/framework/utils'
-import path from 'node:path'
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
@@ -26,7 +25,6 @@ module.exports = defineConfig({
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     },
     redisUrl: process.env.REDIS_URL,
-    workerMode: 'server',
     redisPrefix: "medusa",
   },
   modules: [
