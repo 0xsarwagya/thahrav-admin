@@ -54,17 +54,23 @@ module.exports = defineConfig({
       },
     },
     {
-      resolve: "@medusajs/medusa/file",
+      resolve: `@rsc-labs/medusa-affiliate-discount`,
+      options: {
+        enableUI: true
+      }
+    },
+    {
+      resolve: "@medusajs/medusa/analytics",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/file-local",
-            id: "local",
+            resolve: "@medusajs/analytics-posthog",
+            id: "posthog",
             options: {
-              upload_dir: "static",
-              backend_url: "http://admin.thahrav.shop/static",
+              posthogEventsKey: process.env.POSTHOG_EVENTS_API_KEY,
+              posthogHost: process.env.POSTHOG_HOST,
             },
-          },
+          }
         ],
       },
     },
