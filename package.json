@@ -26,15 +26,15 @@
     "@medusajs/admin-sdk": "2.8.4",
     "@medusajs/cli": "2.8.4",
     "@medusajs/framework": "2.8.4",
-    "@medusajs/medusa": "2.8.4",
+    "@medusajs/medusa": "^2.8.4",
     "@mikro-orm/core": "6.4.3",
     "@mikro-orm/knex": "6.4.3",
     "@mikro-orm/migrations": "6.4.3",
     "@mikro-orm/postgresql": "6.4.3",
-    "@rsc-labs/medusa-affiliate-discount": "^0.2.0",
+    "@rsc-labs/medusa-documents-v2": "0.1.6",
     "awilix": "^8.0.1",
     "dotenv": "^16.5.0",
-    "medusa-plugin-wishlist": "^1.1.44",
+    "medusav2-file-supabase-storage": "^0.0.5",
     "pg": "^8.13.0"
   },
   "devDependencies": {

@@ -1,8 +1,5 @@
-import dotenv from 'dotenv'
 import { loadEnv, defineConfig } from '@medusajs/framework/utils'
 import path from 'node:path'
-
-dotenv.config({ path: path.join(process.cwd(), '.env') })
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
@@ -54,12 +51,6 @@ module.exports = defineConfig({
       },
     },
     {
-      resolve: `@rsc-labs/medusa-affiliate-discount`,
-      options: {
-        enableUI: true
-      }
-    },
-    {
       resolve: "@medusajs/medusa/analytics",
       options: {
         providers: [
@@ -74,5 +65,20 @@ module.exports = defineConfig({
         ],
       },
     },
+    {
+      resolve: "@medusajs/medusa/file",
+      options: {
+        providers: [
+          {
+            resolve: "medusav2-file-supabase-storage/modules/file",
+            options: {
+              bucketName: process.env.BUCKET_NAME,
+              supabaseUrl: process.env.SUPABASE_URL,
+              apiKey: process.env.SUPABASE_KEY,
+            },
+          },
+        ],
+      },
+    }
   ],
 })
