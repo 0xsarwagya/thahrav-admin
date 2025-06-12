@@ -58,16 +58,10 @@ module.exports = defineConfig({
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/file-s3",
-            id: "s3",
-            options: {
-              file_url: process.env.S3_FILE_URL,
-              access_key_id: process.env.S3_ACCESS_KEY_ID,
-              secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
-              region: "ap-south-1",
-              bucket: "medusa",
-              endpoint: "https://vzjmbomxhjmizuvoeacv.supabase.co/storage/v1/s3",
-            },
+            resolve: "@medusajs/medusa/file-local",
+            id: "local",
+            upload_dir: "./uploads",
+            backend_url: "http://admin.thahrav.shop/static",
           },
         ],
       },
