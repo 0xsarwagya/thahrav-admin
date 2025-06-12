@@ -60,8 +60,10 @@ module.exports = defineConfig({
           {
             resolve: "@medusajs/medusa/file-local",
             id: "local",
-            upload_dir: "./uploads",
-            backend_url: "http://admin.thahrav.shop/static",
+            options: {
+              upload_dir: "static",
+              backend_url: "http://admin.thahrav.shop/static",
+            },
           },
         ],
       },
