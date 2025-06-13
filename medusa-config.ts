@@ -1,4 +1,5 @@
 import { loadEnv, defineConfig } from '@medusajs/framework/utils'
+
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
 const BACKEND_URL = process.env.BACKEND_URL || "localhost:9000"
@@ -81,5 +82,31 @@ module.exports = defineConfig({
         ],
       },
     },
+    {
+      resolve: "medusa-plugin-auth-v2",
+      options: {
+        // JWT settings
+        jwt: {
+          secret: process.env.JWT_SECRET,
+          expiresIn: "7d"
+        },
+        // Cookie settings
+        cookie: {
+          name: "medusa-auth",
+          secure: process.env.NODE_ENV === "production",
+          maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
+        },
+        // OAuth provider configurations
+        google: {
+          clientID: process.env.GOOGLE_CLIENT_ID,
+          clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+          callbackURL: process.env.GOOGLE_CALLBACK_URL,
+          // Strategy options
+          strategyOptions: {
+            scope: ["profile", "email"]
+          }
+        }
+      }
+    }
   ],
 })
