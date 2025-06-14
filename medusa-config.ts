@@ -1,4 +1,5 @@
 import { loadEnv, defineConfig } from '@medusajs/framework/utils'
+import { Modules, ContainerRegistrationKeys } from "@medusajs/framework/utils"
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
@@ -30,8 +31,35 @@ module.exports = defineConfig({
     },
     redisUrl: process.env.REDIS_URL,
     redisPrefix: "medusa",
+    redisOptions: {
+      username: process.env.REDIS_USERNAME,
+      password: process.env.REDIS_PASSWORD,
+      host: process.env.REDIS_HOST,
+      port: Number(process.env.REDIS_PORT),
+    }
   },
   modules: [
+    {
+      resolve: "@medusajs/medusa/auth",
+      dependencies: [Modules.CACHE, ContainerRegistrationKeys.LOGGER],
+      options: {
+        providers: [
+          {
+            resolve: "@medusajs/medusa/auth-emailpass",
+            id: "emailpass",
+          },
+          {
+            resolve: "@medusajs/medusa/auth-google",
+            id: "google",
+            options: {
+              clientId: process.env.GOOGLE_CLIENT_ID,
+              clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+              callbackUrl: process.env.NODE_ENV === "development" ? "http://localhost:10000/auth/google/callback" : "https://admin.thahrav.shop/auth/google/callback",
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: "@medusajs/medusa/cache-redis",
       options: {
@@ -81,32 +109,6 @@ module.exports = defineConfig({
           },
         ],
       },
-    },
-    {
-      resolve: "medusa-plugin-auth-v2",
-      options: {
-        // JWT settings
-        jwt: {
-          secret: process.env.JWT_SECRET,
-          expiresIn: "7d"
-        },
-        // Cookie settings
-        cookie: {
-          name: "medusa-auth",
-          secure: process.env.NODE_ENV === "production",
-          maxAge: 1000 * 60 * 60 * 24 * 7 // 7 days
-        },
-        // OAuth provider configurations
-        google: {
-          clientID: process.env.GOOGLE_CLIENT_ID,
-          clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-          callbackURL: process.env.GOOGLE_CALLBACK_URL,
-          // Strategy options
-          strategyOptions: {
-            scope: ["profile", "email"]
-          }
-        }
-      }
     }
   ],
 })
