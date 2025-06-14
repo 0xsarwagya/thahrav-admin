@@ -6306,7 +6306,7 @@ bl@^4.1.0:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-body-parser@1.20.3:
+body-parser@1.20.3, body-parser@^1.19.0:
   version "1.20.3"
   resolved "https://registry.npmmirror.com/body-parser/-/body-parser-1.20.3.tgz#1953431221c6fb5cd63c4b36d53fab0928e548c6"
   integrity sha512-7rAxByjUMqQ3/bHJy7D6OGXvx/MMc4IqBn/X0fcM1QUcAItpZrBEYhWGem+tzXH90c+G01ypMcYJBO9Y30203g==
@@ -7729,7 +7729,7 @@ express-session@^1.17.3:
     safe-buffer "5.2.1"
     uid-safe "~2.1.5"
 
-express@^4.21.0:
+express@^4.17.1, express@^4.21.0:
   version "4.21.2"
   resolved "https://registry.npmmirror.com/express/-/express-4.21.2.tgz#cf250e48362174ead6cea4a566abef0162c1ec32"
   integrity sha512-28HqgMZAmih1Czt9ny7qr6ek2qddF4FclbMzwhCREB6OFfH+rXAnuNCwo1/wFvrtbgsQDb4kSbX9de9lFbrXnA==
@@ -9736,6 +9736,16 @@ medusa-core-utils@^1.2.3:
   integrity sha512-mNUqWh8G7BF9dcxt3t22GtSJrm4pfpU98QzvNgpqAvirVbBI4lOCpDQGoKE+jMHOLQJHrLQFoSJeqcofDJvEgA==
   dependencies:
     awilix "^8.0.0"
+
+medusa-plugin-wishlist@^1.1.44:
+  version "1.1.44"
+  resolved "https://registry.npmmirror.com/medusa-plugin-wishlist/-/medusa-plugin-wishlist-1.1.44.tgz#738edfd4410e928c2f1a7a954f7a6519266eb319"
+  integrity sha512-91KTIi6ShdBrcu9MNAtQuA7HQqlJ/gfr6ACmOwscQh1D7t5AO+GHbgFSQEz2s8d7tRp9s4YVV8j6vnh8apjVxw==
+  dependencies:
+    body-parser "^1.19.0"
+    cors "^2.8.5"
+    express "^4.17.1"
+    medusa-core-utils "^1.2.3"
 
 medusav2-file-supabase-storage@^0.0.5:
   version "0.0.5"

@@ -8,6 +8,15 @@ const ADMIN_URL = process.env.ADMIN_URL || "localhost:7000"
 const STORE_URL = process.env.STORE_URL || "localhost:8000"
 
 module.exports = defineConfig({
+  admin: {
+    vite: () => {
+      return {
+        optimizeDeps: {
+          include: ["qs"],
+        },
+      };
+    },
+  },
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
     databaseName: "defaultdb",
@@ -109,6 +118,9 @@ module.exports = defineConfig({
           },
         ],
       },
-    }
+    },
+    {
+      resolve: "./src/modules/wishlist"
+    },
   ],
 })
