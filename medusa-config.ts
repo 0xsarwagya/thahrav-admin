@@ -203,6 +203,6 @@ module.exports = defineConfig({
             },
         }, 
       },
-    }
+    },
   ]
 })

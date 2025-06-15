@@ -3359,7 +3359,7 @@
     outdent "^0.8.0"
     picocolors "^1.1.0"
 
-"@medusajs/admin@latest":
+"@medusajs/admin@^7.1.9", "@medusajs/admin@latest":
   version "7.1.18"
   resolved "https://registry.npmmirror.com/@medusajs/admin/-/admin-7.1.18.tgz#373e0f86b2b655cedadb8e02a0c7e27eebdee15f"
   integrity sha512-eGHskmr6YH8gZEHHuraSPDPirx5IM/7R/Nner5EIStrj76uyIL/2AwynQEx8Gpi3M+vmXzlFvrZPj6k3O07jyQ==
@@ -3606,15 +3606,15 @@
   resolved "https://registry.npmmirror.com/@medusajs/fulfillment/-/fulfillment-2.8.4.tgz#30362c473fcaac272716412b0c9e9d60e0f8f9d0"
   integrity sha512-W11VN5Uh1YPpSdsoEefaVu6Vpy04ElL+Uw4AMWMYrH3UCnc+o/nzCf/wcUviwHy5mLGlvFq7cMvaz0WP1L5mMw==
 
+"@medusajs/icons@1.2.2", "@medusajs/icons@^1.2.1", "@medusajs/icons@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.npmmirror.com/@medusajs/icons/-/icons-1.2.2.tgz#2961143c075a40ba2d337df0e3c915b8a414b64b"
+  integrity sha512-yCaEvCJg1GqbJ8eySqe+y3zS8tiE0cK/XNOsgmCHZ3dsu8i6lKvrsGzPVdjAtKlUJ9F2CnBO8dm4oXrg5w+6CA==
+
 "@medusajs/icons@2.8.4":
   version "2.8.4"
   resolved "https://registry.npmmirror.com/@medusajs/icons/-/icons-2.8.4.tgz#cf49fec6fb7c2b9da2900ebb40187f58fbabeb95"
   integrity sha512-g6Hc+8eRH4HTlYpW3tyNPdQ6Iym1Lvul/7MVD6ANYn9LCNchVU2HFhYz9m6M+tC96/gMDWRExiVWaW/hexvPTg==
-
-"@medusajs/icons@^1.2.1", "@medusajs/icons@^1.2.2":
-  version "1.2.2"
-  resolved "https://registry.npmmirror.com/@medusajs/icons/-/icons-1.2.2.tgz#2961143c075a40ba2d337df0e3c915b8a414b64b"
-  integrity sha512-yCaEvCJg1GqbJ8eySqe+y3zS8tiE0cK/XNOsgmCHZ3dsu8i6lKvrsGzPVdjAtKlUJ9F2CnBO8dm4oXrg5w+6CA==
 
 "@medusajs/index@2.8.4":
   version "2.8.4"
@@ -7134,6 +7134,20 @@
   resolved "https://registry.npmmirror.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.43.0.tgz#42a88207659e404e8ffa655cae763cbad94906ab"
   integrity sha512-SnGhLiE5rlK0ofq8kzuDkM0g7FN1s5VYY+YSMTibP7CqShxCQvqtNxTARS4xX4PFJfHjG0ZQYX9iGzI3FQh5Aw==
 
+"@rsc-labs/medusa-affiliate-discount@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.npmmirror.com/@rsc-labs/medusa-affiliate-discount/-/medusa-affiliate-discount-0.2.0.tgz#d8ec6eb451076fd9638a3b81851321f06c9cb67e"
+  integrity sha512-yQ6/7JpQrYV8qdt35ejGtS1I6jCIbpuSuUMysGF67+uxrKstdtflZcsQykUOBlrhr4cSF4LfmyqyEFymJGnTng==
+  dependencies:
+    "@medusajs/admin" "^7.1.9"
+    "@medusajs/icons" "1.2.2"
+    "@medusajs/ui" "^3.0.1"
+    "@tanstack/react-query" "4.22"
+    medusa-interfaces "^1.3.7"
+    medusa-react "^9.0.12"
+    react-hook-form "^7.49.2"
+    typeorm "^0.3.16"
+
 "@rsc-labs/medusa-products-bought-together-v2@^0.0.3":
   version "0.0.3"
   resolved "https://registry.npmmirror.com/@rsc-labs/medusa-products-bought-together-v2/-/medusa-products-bought-together-v2-0.0.3.tgz#beb63bbe71ccf7d9800f03dc9b57f18e79493cfc"
@@ -8869,10 +8883,23 @@
   resolved "https://registry.npmmirror.com/@tanstack/query-core/-/query-core-4.22.0.tgz#7a786fcea64e229ed5d4308093dd644cdfaa895e"
   integrity sha512-OeLyBKBQoT265f5G9biReijeP8mBxNFwY7ZUu1dKL+YzqpG5q5z7J/N1eT8aWyKuhyDTiUHuKm5l+oIVzbtrjw==
 
+"@tanstack/query-core@4.22.4":
+  version "4.22.4"
+  resolved "https://registry.npmmirror.com/@tanstack/query-core/-/query-core-4.22.4.tgz#aca622d2f8800a147ece5520d956a076ab92f0ea"
+  integrity sha512-t79CMwlbBnj+yL82tEcmRN93bL4U3pae2ota4t5NN2z3cIeWw74pzdWrKRwOfTvLcd+b30tC+ciDlfYOKFPGUw==
+
 "@tanstack/query-core@5.64.2":
   version "5.64.2"
   resolved "https://registry.npmmirror.com/@tanstack/query-core/-/query-core-5.64.2.tgz#be06e7c7966d14ea3e7c82bea1086b463f2f6809"
   integrity sha512-hdO8SZpWXoADNTWXV9We8CwTkXU88OVWRBcsiFrk7xJQnhm6WRlweDzMD+uH+GnuieTBVSML6xFa17C2cNV8+g==
+
+"@tanstack/react-query@4.22":
+  version "4.22.4"
+  resolved "https://registry.npmmirror.com/@tanstack/react-query/-/react-query-4.22.4.tgz#851581c645f1c9cfcd394448fedd980a39bbc3fe"
+  integrity sha512-e5j5Z88XUQGeEPMyz5XF1V0mMf6Da+6URXiTpZfUb9nuHs2nlNoA+EoIvnhccE5b9YT6Yg7kARhn2L7u94M/4A==
+  dependencies:
+    "@tanstack/query-core" "4.22.4"
+    use-sync-external-store "^1.2.0"
 
 "@tanstack/react-query@4.22.0":
   version "4.22.0"
@@ -15032,6 +15059,11 @@ medusa-core-utils@1.2.3, medusa-core-utils@^1.1.30, medusa-core-utils@^1.2.3:
   dependencies:
     awilix "^8.0.0"
 
+medusa-interfaces@^1.3.7:
+  version "1.3.10"
+  resolved "https://registry.npmmirror.com/medusa-interfaces/-/medusa-interfaces-1.3.10.tgz#92c41c174becfa303fd6e948e3303063b0fe4d9c"
+  integrity sha512-S3J8+W/Wy5zoJML7P5mxGd9gRJTdMaRdpiPAhMeod8MmZGcTKpLRB1Ms8d2+pNDPhmoHJ69SAKaWRxp1w7eCUg==
+
 medusa-plugin-auth@^1.11.1:
   version "1.11.1"
   resolved "https://registry.npmmirror.com/medusa-plugin-auth/-/medusa-plugin-auth-1.11.1.tgz#2a94faae0807ba7fb700c1950d94484f0d0139ac"
@@ -15093,7 +15125,7 @@ medusa-plugin-wishlist@^1.1.44:
     express "^4.17.1"
     medusa-core-utils "^1.2.3"
 
-medusa-react@^9.0.16, medusa-react@^9.0.18:
+medusa-react@^9.0.12, medusa-react@^9.0.16, medusa-react@^9.0.18:
   version "9.0.18"
   resolved "https://registry.npmmirror.com/medusa-react/-/medusa-react-9.0.18.tgz#02b826f5b2720ecfd0334fdd9a49f341970f8ab9"
   integrity sha512-3xSw3MuH7OEX6Tz21Tthev2+1Mk/S1nI6qsqgRqUl4prZTcRFgHXq421hPeqd1RoX2h8SO2Ap1/qObc2da3tCg==
@@ -17264,6 +17296,11 @@ react-hook-form@7.49.1:
   version "7.49.1"
   resolved "https://registry.npmmirror.com/react-hook-form/-/react-hook-form-7.49.1.tgz#aa2be335e19c3cd05d2401d39cb35a9937636fdb"
   integrity sha512-MId71bfWmpyvwuWjVTe2b4DRc0jIYOb/B9tlrotEHTuHlQGeX1x2QXfjNe9UtMi6TqhO0bsSdSWgjcUFh2fSww==
+
+react-hook-form@^7.49.2:
+  version "7.57.0"
+  resolved "https://registry.npmmirror.com/react-hook-form/-/react-hook-form-7.57.0.tgz#d0bb0c84060c6b9282d99c64566ec919dfca9409"
+  integrity sha512-RbEks3+cbvTP84l/VXGUZ+JMrKOS8ykQCRYdm5aYsxnDquL0vspsyNhGRO7pcH6hsZqWlPOjLye7rJqdtdAmlg==
 
 react-hot-toast@2.4.0:
   version "2.4.0"
