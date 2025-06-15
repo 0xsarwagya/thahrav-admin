@@ -3,10 +3,6 @@ import { Modules, ContainerRegistrationKeys } from "@medusajs/framework/utils"
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
-const BACKEND_URL = process.env.BACKEND_URL || "localhost:9000"
-const ADMIN_URL = process.env.ADMIN_URL || "localhost:7000"
-const STORE_URL = process.env.STORE_URL || "localhost:8000"
-
 module.exports = defineConfig({
   admin: {
     vite: () => {
@@ -119,8 +115,94 @@ module.exports = defineConfig({
         ],
       },
     },
-    {
-      resolve: "./src/modules/wishlist"
-    },
   ],
+  plugins: [
+    {
+      resolve: "medusa-plugin-wishlist",
+      options: {}
+    },
+    {
+      resolve: "@rsc-labs/medusa-products-bought-together-v2",
+      options: {}
+    },
+    {
+      resolve: "@lumot-eu/medusa-plugin-nodemailer",
+      options: {
+        fromAddress: process.env.SMTP_FROM,
+        transport: {
+            host: process.env.SMTP_HOST,
+            port: Number(process.env.SMTP_PORT),
+            auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
+            },
+            tls: {
+                rejectUnauthorized: false,
+            },
+        },
+        templatesDir: "email-templates",
+        layoutsDir: "email-templates/_layouts",
+        partialsDir: "email-templates/_partials",
+        defaultLayout: "default.hbs",
+        templateMap: {
+            "order.placed": {
+                name: "order.placed",
+                subject: "Order confirmation",
+            },
+            "order.shipped": {
+                name: "order.shipped",
+                subject: "Order shipped",
+            },
+            "order.canceled": {
+                name: "order.canceled",
+                subject: "Order canceled",
+            },
+            "order.updated": {
+                name: "order.updated",
+                subject: "Order updated",
+            },
+            "return.requested": {
+                name: "return.requested",
+                subject: "Return requested",
+            },
+            "return.received": {
+                name: "return.received",
+                subject: "Return received",
+            },
+            "return.completed": {
+                name: "return.completed",
+                subject: "Return completed",
+            },
+            "customer.account_created": {
+                name: "customer.account_created",
+                subject: "Account created",
+            },
+            "customer.password_reset": {
+                name: "customer.password_reset",
+                subject: "Password reset",
+            },
+            "customer.order_updated": {
+                name: "customer.order_updated",
+                subject: "Order updated",
+            },
+            "gift_card.created": {
+                name: "gift_card.created",
+                subject: "Gift card created",
+            },
+            "gift_card.updated": {
+                name: "gift_card.updated",
+                subject: "Gift card updated",
+            },
+            "gift_card.deleted": {
+                name: "gift_card.deleted",
+                subject: "Gift card deleted",
+            },
+            "gift_card.expired": {
+                name: "gift_card.expired",
+                subject: "Gift card expired",
+            },
+        }, 
+      },
+    }
+  ]
 })

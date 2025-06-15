@@ -15,14 +15,15 @@
   "scripts": {
     "build": "medusa build",
     "seed": "medusa exec ./src/scripts/seed.ts",
-    "start": "cd .medusa/server && medusa start -p 10000",
-    "dev": "medusa develop -p 10000",
+    "start": "cd .medusa/server && medusa start",
+    "dev": "medusa develop",
     "test:integration:http": "TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
     "test:integration:modules": "TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit",
     "test:unit": "TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit",
     "postbuild": "medusa db:migrate"
   },
   "dependencies": {
+    "@lumot-eu/medusa-plugin-nodemailer": "^1.0.6",
     "@medusajs/admin-sdk": "2.8.4",
     "@medusajs/cli": "2.8.4",
     "@medusajs/framework": "2.8.4",
@@ -31,8 +32,11 @@
     "@mikro-orm/knex": "6.4.3",
     "@mikro-orm/migrations": "6.4.3",
     "@mikro-orm/postgresql": "6.4.3",
+    "@rsc-labs/medusa-products-bought-together-v2": "^0.0.3",
     "awilix": "^8.0.1",
     "dotenv": "^16.5.0",
+    "medusa-plugin-auth": "^1.11.1",
+    "medusa-plugin-blogger": "^0.0.1",
     "medusa-plugin-wishlist": "^1.1.44",
     "medusav2-file-supabase-storage": "^0.0.5",
     "pg": "^8.13.0"
