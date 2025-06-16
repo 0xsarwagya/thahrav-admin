@@ -136,6 +136,21 @@ module.exports = defineConfig({
         ],
       },
     },
+    {
+
+      resolve: "@medusajs/medusa/tax",
+      options: {
+        providers: [
+          {
+            resolve: "./src/modules/tax/providers",
+            id: "indian-gst",
+            options: {
+              origin_province_code: "BR",
+            },
+          },
+        ],
+      },
+    },
   ],
   plugins: [
     {
